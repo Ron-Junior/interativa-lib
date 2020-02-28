@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "exampleComponent": {
+      "root": "projects/example-component",
+      "sourceRoot": "projects/example-component/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/example-component/tsconfig.lib.json",
+            "project": "projects/example-component/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/example-component/src/test.ts",
+            "tsConfig": "projects/example-component/tsconfig.spec.json",
+            "karmaConfig": "projects/example-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/example-component/tsconfig.lib.json",
+              "projects/example-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "getStartApp"
