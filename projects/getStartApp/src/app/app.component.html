@@ -8,11 +8,11 @@
   </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-2 side-menu">
         <div class="d-flex" id="wrapper">
           <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
-              <a href="#" class="list-group-item list-group-item-action bg-light" *ngFor="let component of components; let i = index">
+              <a class="list-group-item list-group-item-action bg-light" *ngFor="let component of components; let i = index"  routerLink="{{component.path}}">
                 {{component.name}}
               </a>
             </div>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="col-sm">
-      One of three columns
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
