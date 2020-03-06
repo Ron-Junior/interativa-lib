@@ -1,4 +1,13 @@
-<lib-exampleComponent [name]="name"></lib-exampleComponent> <!-- change this line for tag of component created for you -->
-<div *ngFor="let version of component.versions">
-  {{version.number}}
+<div class="card">
+  <div class="card-header">
+    {{component.title}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <lib-exampleComponent [name]="name"></lib-exampleComponent> <!-- change this line for tag of component created for you -->
+    <div *ngFor="let version of component.versions">
+      {{version.number}}
+    </div>
+  </div>
 </div>
