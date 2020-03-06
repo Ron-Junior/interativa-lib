@@ -1,26 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="page">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Interativa - LIB</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2 side-menu">
-        <div class="d-flex" id="wrapper">
-          <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="list-group list-group-flush">
-              <a class="list-group-item list-group-item-action bg-light" *ngFor="let component of components; let i = index"  routerLink="{{component.path}}">
-                {{component.name}}
-              </a>
+  <div class="container-fluid">
+    <div class="row bodypage">
+      <div class="col-sm-2 side-menu">
+          <div class="d-flex menu" id="wrapper">
+            <div class="bg-light" id="sidebar-wrapper">
+              <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action bg-light" *ngFor="let component of components; let i = index"  routerLink="/{{component.title}}">
+                  {{component.name}}
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="col-sm">
-      <router-outlet></router-outlet>
+      </div>
+      <div class="col-sm content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>
